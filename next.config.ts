@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
   output: "export",
   trailingSlash: true,
   basePath,
+  env: { NEXT_PUBLIC_BASE_PATH: basePath },
   assetPrefix: basePath || undefined,
 };
 

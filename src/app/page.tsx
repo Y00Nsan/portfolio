@@ -41,8 +41,17 @@ const experiences = [
 
 const projects = [
   {
+    id: "cyberpath", number: "01", type: "CYBERSECURITY / AI", status: "IN PROGRESS",
+    title: "CyberPath AI",
+    description: "AI-powered cybersecurity career platform for resume analysis, job matching, skill-gap insights, application planning, and interview preparation.",
+    details: "Built with Next.js, React, TypeScript, FastAPI, Python, and AI APIs. Helps cybersecurity job seekers match roles to their resume, identify skill gaps, prepare applications, track progress, and practice interviews.",
+    tags: ["Next.js", "FastAPI", "Python", "AI", "Cybersecurity"], icon: "⌘",
+    url: "https://cyber-path-ai.vercel.app/",
+    github: "https://github.com/Y00Nsan/CyberPath-AI",
+  },
+  {
     id: "scam",
-    number: "01",
+    number: "02",
     type: "RESEARCH",
     status: "IN PROGRESS",
     title: "AI Scam Detection Research",
@@ -55,7 +64,7 @@ const projects = [
   },
   {
     id: "prom",
-    number: "02",
+    number: "03",
     type: "RESEARCH",
     status: "COMPLETED",
     title: "Korean-Language PROM Research",
@@ -68,7 +77,7 @@ const projects = [
   },
   {
     id: "game",
-    number: "03",
+    number: "04",
     type: "SOFTWARE",
     status: "COMPLETED",
     title: "Game Development",
@@ -81,7 +90,7 @@ const projects = [
   },
   {
     id: "prosthetic",
-    number: "04",
+    number: "05",
     type: "DESIGN",
     status: "COMPLETED",
     title: "Prosthetic Hand Design",
@@ -143,6 +152,7 @@ export default function Home() {
   const [activeSkill, setActiveSkill] = useState("SECURITY");
   const [typedText, setTypedText] = useState("");
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [notice, setNotice] = useState<string | null>(null);
 
   const terminalText = "system ready — security_profile loaded";
 
@@ -240,6 +250,7 @@ export default function Home() {
 
       <div className="mouse-glow" />
       <div className="grid-background" />
+      <div className="symbol-background" aria-hidden="true"><span>⌘</span><span>◇</span><span>⌁</span><span>⊕</span><span>⟡</span><span>⌗</span></div>
       <div className="ambient-orb orb-a" />
       <div className="ambient-orb orb-b" />
 
@@ -278,6 +289,7 @@ export default function Home() {
         </div>
       </nav>
 
+      {notice && <div className="work-notice" role="status"><span>{notice}</span><button onClick={() => setNotice(null)} aria-label="Close notification">×</button></div>}
       {/* HERO */}
 
       <section className="hero">
@@ -332,7 +344,7 @@ export default function Home() {
               </div>
 
               <div>
-                <strong>04</strong>
+                <strong>05</strong>
                 <span>SELECTED<br />PROJECTS</span>
               </div>
 
@@ -590,7 +602,7 @@ export default function Home() {
           </div>
 
           <div className="project-counter">
-            <strong>04</strong>
+            <strong>05</strong>
 
             <span>
               SELECTED
@@ -612,6 +624,7 @@ export default function Home() {
                 }`}
               >
                 <button
+                  aria-expanded={isOpen}
                   className="project-main"
                   onClick={() =>
                     setActiveProject(isOpen ? null : project.id)
@@ -658,6 +671,14 @@ export default function Home() {
                       <p>{project.details}</p>
                     </div>
 
+                    {"url" in project && project.url ? (
+                      <div className="project-actions">
+                        <a className="project-visit" href={project.url} target="_blank" rel="noopener noreferrer">Launch CyberPath AI ↗ <small>New tab · portfolio stays open</small></a>
+                        {"github" in project && project.github && <a className="project-visit project-github" href={project.github} target="_blank" rel="noopener noreferrer">View GitHub source ↗</a>}
+                      </div>
+                    ) : (
+                      <div className="project-pending" role="status">IN PROCESS — public project materials are not available yet.</div>
+                    )}
                     <div className="project-detail-state">
                       {project.status === "IN PROGRESS"
                         ? "WORK IN PROGRESS"
