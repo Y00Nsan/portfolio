@@ -104,45 +104,17 @@ const projects = [
 ];
 
 const skills = {
-  SECURITY: ["Threat Intelligence", "OSINT", "MITRE ATT&CK", "Wireshark"],
-  CODE: ["Python", "Java", "JavaScript", "C#"],
-  CLOUD: ["AWS"],
-  TOOLS: ["Git", "GitHub", "Unity", "VirtualBox", "Elastic"],
+  "CLOUD SECURITY": ["AWS cloud fundamentals", "Cloud security concepts", "Identity & access management concepts", "Network security fundamentals"],
+  DEVELOPMENT: ["Python", "Java", "JavaScript / TypeScript", "C#", "React / Next.js", "FastAPI"],
+  "SECURITY ANALYSIS": ["Threat intelligence analysis", "MITRE ATT&CK", "Wireshark", "Elastic / Kibana"],
+  "TOOLS & PLATFORMS": ["Git / GitHub", "AWS", "VirtualBox", "Unity", "TinkerCAD / AutoCAD"],
 };
 
 const focusAreas = [
-  {
-    id: "threat",
-    title: "THREAT INTELLIGENCE",
-    short: "OSINT · TTPs · CTI",
-    description:
-      "Researching threat actors, campaigns, malware, and attack techniques using open-source intelligence.",
-    level: 88,
-  },
-  {
-    id: "research",
-    title: "SECURITY RESEARCH",
-    short: "AI · DATA · ANALYSIS",
-    description:
-      "Exploring security problems through experiments, data collection, model evaluation, and analysis.",
-    level: 78,
-  },
-  {
-    id: "software",
-    title: "SOFTWARE",
-    short: "PYTHON · JAVA · JS",
-    description:
-      "Building practical software and automation with an emphasis on learning through implementation.",
-    level: 82,
-  },
-  {
-    id: "cloud",
-    title: "CLOUD",
-    short: "AWS · SECURITY",
-    description:
-      "Developing cloud and security knowledge with a focus on AWS and secure infrastructure.",
-    level: 62,
-  },
+  {id:"cloud",title:"CLOUD SECURITY",short:"AWS · IAM · NETWORK SECURITY",description:"Building toward a cloud security engineering career through AWS, secure architecture, access control, and network security fundamentals."},
+  {id:"threat",title:"THREAT INTELLIGENCE",short:"CTI · TTPs · OSINT RESEARCH",description:"Investigating threat actors and attack techniques; OSINT is a research methodology, not a programming skill."},
+  {id:"research",title:"SECURITY RESEARCH",short:"AI · DATA · EVALUATION",description:"Evaluating AI-assisted scam detection and security research results with reproducible analysis."},
+  {id:"software",title:"SOFTWARE DEVELOPMENT",short:"PYTHON · JAVA · NEXT.JS",description:"Building applications, APIs, and practical automation that support security workflows."},
 ];
 
 export default function Home() {
@@ -367,7 +339,7 @@ export default function Home() {
             <div className="visual-node node-top">
               <span className="node-icon">⌁</span>
               <div>
-                <strong>THREAT INTEL</strong>
+                <strong>CLOUD SECURITY</strong>
                 <small>DETECT · ANALYZE · PREDICT</small>
               </div>
             </div>
@@ -473,12 +445,12 @@ export default function Home() {
 
             <div className="profile-stat">
               <span>INTEREST</span>
-              <strong>CYBERSECURITY</strong>
+              <strong>CLOUD SECURITY</strong>
             </div>
 
             <div className="profile-stat">
               <span>FOCUS</span>
-              <strong>THREAT INTEL</strong>
+              <strong>CLOUD SECURITY</strong>
             </div>
 
             <div className="profile-stat">
@@ -489,7 +461,7 @@ export default function Home() {
 
           <div className="profile-tags">
             <span>CTI</span>
-            <span>OSINT</span>
+            <span>CLOUD SECURITY</span>
             <span>AI SECURITY</span>
             <span>SOFTWARE</span>
             <span>AWS</span>
@@ -699,9 +671,9 @@ export default function Home() {
           <div className="section-kicker">04 / SKILLS</div>
 
           <h2>
-            Tools in the
+            Technologies &
             <br />
-            <span>toolbox.</span>
+            <span>capabilities.</span>
           </h2>
         </div>
 
@@ -747,13 +719,7 @@ export default function Home() {
 
                       <strong>{skill}</strong>
 
-                      <div className="skill-progress">
-                        <i
-                          style={{
-                            width: `${70 + index * 7}%`,
-                          }}
-                        />
-                      </div>
+                      <span className="skill-evidence">TECHNOLOGY / KNOWLEDGE</span>
                     </div>
                   )
                 )}

@@ -2329,3 +2329,29 @@ button,a {touch-action:manipulation} button:focus-visible,a:focus-visible {outli
 .resume-content>p{color:var(--muted)}
 .resume-page .nav-links a{font-size:clamp(14px,1vw,16px)}
 @media(max-width:700px){.project-actions{flex-direction:column;align-items:stretch}.project-visit{justify-content:center}.resume-frame iframe{min-height:450px}}
+
+/* Portfolio refinements: content-first cards, accessible type, compact actions */
+.project-feature-grid {grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.project-1 {grid-row:auto}
+.project-1 .project-main,.project-main {min-height:340px;padding:30px}
+.project-main > p,.project-details p {max-width:none;width:100%;font-size:clamp(16px,1.1vw,18px);line-height:1.75}
+.project-details {grid-template-columns:minmax(0,1fr);gap:14px;padding:0 30px 26px}
+.project-actions {gap:10px}
+.project-visit {font-size:13px;padding:9px 13px;border-radius:7px}
+.project-visit small {font-size:11px}
+.skill-row {grid-template-columns:30px minmax(0,1fr) auto;gap:16px}
+.skill-evidence {font-size:11px!important;color:#8ba5b5!important;letter-spacing:.05em;text-align:right}
+.skill-terminal-body h3 {font-size:clamp(22px,2vw,30px)}
+.skill-row strong,.skill-tabs button {font-size:clamp(14px,1vw,17px)}
+.resume-page {min-height:100vh;background:#06121e;color:#e9f5f4}
+.resume-content {position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:120px 24px 60px}
+.resume-content h1 {font-size:clamp(36px,5vw,72px);line-height:1.1;margin:20px 0}
+.resume-content h1 em {color:#4ee4ad;font-style:normal}
+.resume-content > p {font-size:17px;color:#b2c6ce}
+.resume-actions {display:flex;flex-wrap:wrap;gap:12px;margin:28px 0}
+.resume-frame {border:1px solid rgba(105,223,185,.3);border-radius:12px;overflow:hidden;background:#0b1b29}
+.resume-frame-bar {display:flex;justify-content:space-between;gap:12px;padding:14px 20px;color:#b2c6ce;font:12px monospace}
+.resume-dots {color:#4ee4ad}
+.resume-frame iframe {display:block;width:100%;height:78vh;min-height:560px;border:0;background:white}
+.resume-return {display:inline-block;margin-top:25px;color:#6df1c4}
+@media(max-width:850px){.project-feature-grid{grid-template-columns:1fr}.project-1 .project-main,.project-main{min-height:auto}.skill-row{grid-template-columns:26px 1fr}.skill-evidence{grid-column:2;text-align:left}.resume-content{padding-top:100px}}
